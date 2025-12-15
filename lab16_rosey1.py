@@ -26,12 +26,12 @@ with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
 
-    # ----- Analyze header using enumerate -----
+    #  Analyze header using enumerate 
     print("CSV Header Fields:")
     for index, column in enumerate(header_row):
         print(index, column)
 
-    # ----- Read rows -----
+    # - Read rows -
     for row in reader:
         try:
             date = datetime.strptime(row[0], "%Y-%m-%d")
@@ -43,7 +43,7 @@ with open(filename) as f:
             dates.append(date)
             unemployment_rates.append(rate)
 
-# ----- Plot the data -----
+# -- Plot the data --
 plt.style.use("seaborn-v0_8")
 
 plt.figure(figsize=(10,5))
